@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/dashboard">TourOfHeroes</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+      <li>
+        <a routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li>
+        <a routerLink="/heroes">Heroes</a>
+      </li>
+      <li>
+        <a routerLink="/hero-cards">Hero cards</a>
+      </li>
+      <li>
+        <a routerLink="/heroes-table">Heroes table</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
