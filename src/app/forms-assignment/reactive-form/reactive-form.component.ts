@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  NgForm,
+  Validators,
+} from '@angular/forms';
 import { Hero } from 'src/app/models/hero';
 
 @Component({
@@ -15,7 +21,14 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.createHeroForm = this.formBuilder.group({
-      id: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      id: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[0-9]*$'),
+          this.shouldBeGreaterThanZero,
+        ],
+      ],
       name: [
         '',
         [
@@ -36,13 +49,15 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.myHero = {
-      id: parseInt(this.id),
-      name: this.name,
-      description: this.description,
-    };
+    if (this.createHeroForm.status) {
+      this.myHero = {
+        id: parseInt(this.idValue),
+        name: this.nameValue,
+        description: this.descriptionValue,
+      };
+    }
 
-    console.log(this.myHero);
+    console.log(this.createHeroForm);
   }
 
   onClear() {
@@ -50,14 +65,23 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   get id() {
+    return this.createHeroForm.get('id');
+  }
+
+  get idValue() {
     return this.createHeroForm.get('id')?.value;
   }
 
-  get name() {
+  get nameValue() {
     return this.createHeroForm.get('name')?.value;
   }
 
-  get description() {
+  get descriptionValue() {
     return this.createHeroForm.get('description')?.value;
+  }
+
+  shouldBeGreaterThanZero(control: FormControl) {
+    if (parseInt(control.value) === 0) return { isZero: true };
+    else return null;
   }
 }

@@ -2,6 +2,11 @@
   <form [formGroup]="createHeroForm" (ngSubmit)="onSubmit()" class="form-group">
     <label for="id">Id</label><br />
     <input class="form-control" formControlName="id" /><br /><br />
+    <span *ngIf="id?.errors?.['isZero']">
+      Invalid id
+      <br />
+      <br />
+    </span>
 
     <label for="name">Name</label><br />
     <input class="form-control" formControlName="name" /><br /><br />
