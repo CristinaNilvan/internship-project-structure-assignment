@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { Hero } from 'src/app/hero';
-import { HeroService } from 'src/app/hero.service';
+import { Hero } from 'src/app/models/hero';
+import { HeroService } from 'src/app/services/hero.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 

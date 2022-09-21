@@ -10,7 +10,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { HeroCardComponent } from './angular-material-assignment/hero-card/hero-card.component';
-import { AngularMaterialModule } from './angular-material.module';
+import { AngularMaterialModule } from './angular-material-assignment/angular-material.module';
 import { HeroesCardListComponent } from './angular-material-assignment/heroes-cards-list/heroes-cards-list.component';
 import { HeroesTableComponent } from './angular-material-assignment/heroes-table/heroes-table.component';
 import { NavbarComponent } from './angular-material-assignment/navbar/navbar.component';
