@@ -1,0 +1,31 @@
+.form-group {
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  width: 30%;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.created-hero {
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.hero-details {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  padding: 2%;
+}
+
+button {
+  padding: 1px 30px;
+  margin: 1%;
+  width: 100px;
+}

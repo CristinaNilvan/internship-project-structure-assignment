@@ -1,0 +1,53 @@
+<div class="form">
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form-group">
+    <label for="id">Id</label><br />
+    <input
+      class="form-control"
+      type="text"
+      ngModel
+      required
+      name="id"
+    /><br /><br />
+
+    <label for="name">Name</label><br />
+    <input
+      class="form-control"
+      type="text"
+      ngModel
+      required
+      minlength="2"
+      maxlength="50"
+      name="name"
+    /><br /><br />
+
+    <label for="description">Description</label><br />
+    <textarea
+      class="form-control"
+      type="text"
+      ngModel
+      required
+      name="description"
+      minlength="2"
+      maxlength="500"
+    >
+    </textarea
+    ><br /><br />
+
+    <button [disabled]="!form.valid" type="submit">Send</button>
+    <button (click)="onClear(form)">Clear</button>
+  </form>
+</div>
+
+<br />
+<br />
+
+<div class="created-hero">
+  <h1>Created hero:</h1>
+  <div class="hero-details">
+    <h1 *ngIf="myHero?.name">{{ myHero.name }}</h1>
+    <p *ngIf="myHero?.description">{{ myHero.description }}</p>
+  </div>
+</div>
+
+<br />
+<br />

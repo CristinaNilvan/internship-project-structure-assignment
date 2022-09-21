@@ -1,0 +1,52 @@
+<form [formGroup]="createHeroForm" (ngSubmit)="onSubmit()" class="form-group">
+  <p>
+    <mat-form-field class="form-control" appearance="outline">
+      <mat-label>Id</mat-label>
+      <input formControlName="id" matInput placeholder="Id" />
+      <mat-hint>A number</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field class="form-control" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="Name" />
+      <mat-hint>Your name</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field class="form-control" appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea formControlName="description" matInput></textarea>
+      <mat-hint>Something about you</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <button
+      mat-flat-button
+      color="accent"
+      [disabled]="!createHeroForm.valid"
+      type="submit"
+    >
+      Create
+    </button>
+
+    <button mat-flat-button color="primary" (click)="onClear()">Clear</button>
+  </p>
+</form>
+
+<br />
+<br />
+
+<div class="created-hero">
+  <h1>Created hero:</h1>
+  <div class="hero-details">
+    <h1 *ngIf="myHero?.name">{{ myHero.name }}</h1>
+    <p *ngIf="myHero?.description">{{ myHero.description }}</p>
+  </div>
+</div>
+
+<br />
+<br />

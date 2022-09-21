@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,9 @@ import { NavbarComponent } from './angular-material-assignment/navbar/navbar.com
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SidenavListComponent } from './angular-material-assignment/sidenav-list/sidenav-list.component';
 import { NavigationComponent } from './angular-material-assignment/navigation/navigation.component';
+import { TemplateDrivenFormComponent } from './forms-assignment/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './forms-assignment/reactive-form/reactive-form.component';
+import { HeroFormComponent } from './angular-material-assignment/hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +35,15 @@ import { NavigationComponent } from './angular-material-assignment/navigation/na
     NavbarComponent,
     SidenavListComponent,
     NavigationComponent,
+    TemplateDrivenFormComponent,
+    ReactiveFormComponent,
+    HeroFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularMaterialModule,
     FlexLayoutModule,
   ],
